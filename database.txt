@@ -1,0 +1,13 @@
+                          Mongodb                Postgress
+    Type                  Document                Relational
+    Organized into        collection              tables
+    Query language        NOSQL                   SQL
+    Scaling               Horizontal(Processor)   vertical(Speed)
+    schema                flexible                rigid
+
+Mongodb is best for unstructured data or where the structure is often change
+SQL is structure of data is known and well define
+
+mongodb allow to access the data in and we can access that data using the object
+
+Referential integrity is a data quality concept that ensures that when you make changes to data in one place, those changes are reflected in other related records

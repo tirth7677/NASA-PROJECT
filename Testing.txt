@@ -1,0 +1,6 @@
+Test Runner:- find all the test in your project and run them and give result
+Test fixtures:- how our test are setup or organized by module
+Assertions:- that check 5+5  = 10 bascially it make sure you get the desired output in the jest
+Mocking:- mocking is bascially run the test and does not effect our actual database in the mongodb or temparoraly effect he database
+
+Jest: Jest is a framework for testing JavaScript code. Unit testing is the main usage of it. SuperTest: Using Supertest, we can test endpoints and routes on HTTP servers
