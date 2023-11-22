@@ -3,4 +3,15 @@ Test fixtures:- how our test are setup or organized by module
 Assertions:- that check 5+5  = 10 bascially it make sure you get the desired output in the jest
 Mocking:- mocking is bascially run the test and does not effect our actual database in the mongodb or temparoraly effect he database
 
-Jest: Jest is a framework for testing JavaScript code. Unit testing is the main usage of it. SuperTest: Using Supertest, we can test endpoints and routes on HTTP servers
+Jest:
+
+Jest is a popular JavaScript testing framework that is commonly used for testing JavaScript code, including both front-end and back-end applications.
+It is developed by Facebook and is widely used for testing React applications, but it can be used for any JavaScript project.
+Jest provides a test runner, assertion library, and mocking support out of the box.
+It is known for its simplicity, speed, and ability to run tests in parallel.
+SuperTest:
+
+SuperTest is a library for testing HTTP assertions in JavaScript applications.
+It is often used in conjunction with Jest or other testing frameworks to test the HTTP responses of a server.
+SuperTest allows you to make HTTP requests to your server and then make assertions about the responses.
+It provides a fluent API for making HTTP requests and inspecting the responses, making it easy to write expressive and readable tests.

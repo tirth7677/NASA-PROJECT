@@ -1,0 +1,63 @@
+The YAML file you provided is a configuration file for GitHub Actions. It defines a workflow named "NASA Project CI" with two triggers: push for the main branch and pull_request for the main branch. The workflow has one job named "build" that runs on an Ubuntu latest environment.
+
+1) Workflow Name and Triggers:
+//
+name: NASA Project CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+//
+The workflow is named "NASA Project CI."
+It is triggered on both push events to the main branch and pull_request events targeting the main branch
+
+2) Job Definition:
+//
+jobs:
+  build:
+//
+The workflow contains one job named "build."
+
+3) Job Runs On
+//
+runs-on: ubuntu-latest
+//
+The job runs on a virtual machine with the latest version of Ubuntu.
+
+4) Job Steps:
+//
+steps:
+//
+The steps define a sequence of actions to be executed in the job.
+
+5) Checkout Repository:
+//
+- uses: actions/checkout@v3
+//
+This step checks out the source code of the repository.
+
+6) Setup Node.js:
+//
+- name: Use Node.js version 18
+  uses: actions/setup-node@v3
+  with:
+    node-version: "18"
+//
+This step sets up Node.js version 18 for the job.
+
+7) Install Dependencies:
+//
+- run: npm install
+//
+This step installs the Node.js dependencies using npm.
+
+8) Build Process:
+//
+- run: npm run build --prefix client
+//
+This step runs the build process using npm. The --prefix client flag indicates that the build should be performed in the "client" directory.
+
+//
+this GitHub Actions workflow checks out the code, sets up Node.js 18, installs dependencies, and runs the build process in the "client" directory when changes are pushed to or a pull request is opened against the main branch. This is a basic CI (Continuous Integration) workflow that ensures the project builds successfully in a controlled environment.
+//
