@@ -1,0 +1,97 @@
+Whenever there we have to upload our project in cloud there are maninly 2 ways
+1) Serverless 
+
+Definition: Serverless computing, also known as Function as a Service (FaaS), is a cloud computing execution model where cloud providers automatically manage the infrastructure for you.
+In a serverless architecture, you only need to worry about your code (functions), and the cloud provider takes care of the underlying servers, scaling, and maintenance.
+Key Characteristics:
+
+Event-Driven: Serverless functions are triggered by events, such as HTTP requests, database changes, or file uploads.
+Stateless: Functions are designed to be stateless, meaning they don't store information between invocations. Any required state should be stored externally (e.g., in a database).
+Automatic Scaling: Serverless platforms automatically scale your functions based on demand, ensuring optimal performance.
+Advantages:
+
+Cost Efficiency: You only pay for the actual compute resources used during the execution of your functions.
+Simplified Management: No need to manage servers or worry about infrastructure. Focus is on code development.
+Automatic Scaling: Scales dynamically based on demand.
+
+Use Cases: Microservices: Serverless is well-suited for building individual microservices that can be independently deployed and scaled.
+Event-Driven Applications: Ideal for applications with sporadic or unpredictable workloads triggered by events.
+
+2) Containers:
+
+Definition: Containers are lightweight, standalone, and executable software packages that include everything needed to run a piece of software, including the code, runtime, libraries, and system tools.
+Containers provide a consistent and isolated environment, ensuring that an application runs consistently across different environments.
+Key Characteristics:
+
+Isolation: Containers encapsulate an application and its dependencies, providing isolation from the underlying infrastructure.
+Portability: Containers can run consistently across various environments, from development to testing to production.
+Resource Efficiency: Containers share the host OS's kernel, making them more lightweight than traditional virtual machines.
+Advantages:
+
+Consistency: Applications run consistently across different environments, reducing the "it works on my machine" problem.
+Scalability: Containers can be easily scaled up or down to meet varying demand.
+Resource Efficiency: Multiple containers can run on a single host, optimizing resource usage.
+
+Use Cases: Microservices Architecture: Containers are often used to deploy and manage microservices in a scalable and efficient way.
+Continuous Integration/Continuous Deployment (CI/CD): Containers facilitate consistent deployment across various stages of development and testing.
+Hybrid and Multi-Cloud Deployments: Containers provide portability, making it easier to deploy applications across different cloud providers.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+virtual machine: - https://cdn.ttgtmedia.com/rms/onlineimages/virtual_machines-h.png
+
+as you can see there are infrastructure mean our computer 
+after that Host operating system my os is window 
+hypervisor mean it can check which virtual machine is running
+VM1 is my apple system
+vm2 is my linux
+vm3 is my ubuntu 
+so this all 3 sytem run in my window and this is called vitrual machine
+
+-----------------------------------------------------------------------------------------------------------------------------
+why we should use docker :-
+suppose my pc config was diffrent and all other pc config are diffrent but i want to run my production code in any system then i can use docker it ensure every one see the same production files
+
+Why should we use docker and diffrence between npm packages?
+
+Cross-Technology Compatibility:
+
+Docker is not limited to Node.js; it can containerize applications written in various languages and frameworks. This makes it a more versatile solution for heterogeneous environments.
+Full Application Stack:
+
+Docker encapsulates the entire application stack, including runtime, libraries, and dependencies. It provides a more comprehensive solution for creating reproducible and scalable environments.
+Infrastructure Agnosticism:
+
+Docker containers can run on any system that supports Docker, whether it's a developer's laptop, a testing environment, or a production server. This ensures consistency across different stages of the development lifecycle.
+Scaling and Orchestration:
+
+Docker Swarm and Kubernetes enable efficient scaling, orchestration, and management of containers in production environments.
+Ecosystem Integration:
+
+Docker integrates with various tools and platforms, allowing seamless integration into modern CI/CD pipelines.
+While npm and package.json are crucial for Node.js development and dependency management, Docker provides a broader solution for packaging, distributing, and running applications with consistency across different environments and technology stacks. They can complement each other, with Docker handling the overall application deployment and npm managing language-specific dependencies within the container.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+container vs virtual machine
+container run fast they take minimum host os resource and it is less secure
+vm run slow they take more space and it is more secure because every vm has its own enviroment
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Docker:- 
+
+A Docker image is a file used to execute code in a Docker container. 
+go to "hub.docker.com" you get diffrent image or say container in docker 
+to write the code "docker run -p 80:80 docker-image-name" -p mean publish
+now go to localhost:80 you will get your docker file
+How to login docker using terminal write "docker login"
+and you can see all your reposetory in docker hub
+-------------------------------------------------------------------------------------------------------------
+
+in Dokcerfile it has set of instruction to run our docker container
+we mostly use apline version it take less storage
+--------------------------------------------------------------------------------------------------------------------
+here i have created .dockerignore file so my node module also not import 
+
+------------------------------------------------------------------------------------------------------------------
+docker build . -t tirth33/nasa-project to build the image 
+------------------------------------------------------------------------------------------------
+docker run -it -p 8000:8000 tirth33/nasa-project this is to show our image
