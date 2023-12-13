@@ -95,3 +95,7 @@ here i have created .dockerignore file so my node module also not import
 docker build . -t tirth33/nasa-project to build the image 
 ------------------------------------------------------------------------------------------------
 docker run -it -p 8000:8000 tirth33/nasa-project this is to show our image
+-------------------------------------------------------------------------------------------------------------
+docker push tirth33/nasa-project to push my image in docker hub
+---------------------------------------------------------------------------------------------------------------
+first we have docker file when we build that file it convert into docker image and when we run dokcer image then it store in docker container

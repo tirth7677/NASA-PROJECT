@@ -1,0 +1,22 @@
+Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. Amazon EC2's simple web service interface allows you to obtain and configure capacity with minimal friction.
+first is to choose amazone machine image
+configure security group -> control traffic which protocol access the server
+go to custom tcp rule and type 8000 which is our default port and ssh is for anywhere
+then we get our EC2 key-pair file which is use to connect ec2 to our pc for uploading docker image and website
+ssh is use to communicate two computer in the internet
+-----------------------------------------------------------------------------------------------------------
+connect ec2 using ssh key-pair file
+1) in coomand shell go to the key-pair folder
+2) then copy code from ec2 instance connect "ssh -i "key_name.pem" ec2-user@"public ipv4 address""
+3) for permission write "chmod 400 key_name.pem"
+---------------------------------------------------------------------------------------------------------------
+now we need to start docker in our ec2 
+1) sudo service docker start
+2) sudo docker info (make sure you write sudo otherwise it get permission denied problem)
+3) if we dont want to run sudo evertime then do "sudo usermod -a -G docker ec2-user" and exit the ec2 instance and then again go to ec2 instance it run succesfully
+--------------------------------------------------------------------------------------------------------------------
+now how to run docker container in ec2 
+1) docker login
+2) docker run --restart=always -p 8000:8000 tirth_33/nasa-project
+and everythings done 
+now write in broweser ipv4 address:8000 you can see your app

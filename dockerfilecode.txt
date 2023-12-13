@@ -1,0 +1,25 @@
+This line specifies the base image for the Docker container. It uses the official Node.js image with version 18.2.0, based on the Alpine Linux distribution. Alpine is a lightweight Linux distribution commonly used in Docker images to reduce image size.
+
+This sets the working directory inside the container to /app. Subsequent commands will be executed in this directory unless otherwise specified.
+
+This copies the package.json file from the host machine (where the Dockerfile is located) to the /app directory in the container. This step is done before copying the entire client and server directories to optimize the Docker build process by leveraging Docker's layer caching.
+
+This copies the package.json file from the client directory of the host machine to the /app/client directory in the container.
+
+This runs the npm install command inside the /app/client directory. The --prefix client option specifies the directory where npm should run the command. The --omit=dev option skips the installation of development dependencies, which can be useful for reducing the size of the production image.
+
+This copies the package.json file from the server directory of the host machine to the /app/server directory in the container.
+
+Similar to the client side, this runs the npm install command inside the /app/server directory, installing server-side dependencies while omitting development dependencies.
+
+This copies the entire contents of the client directory from the host machine to the /app/client directory in the container.
+
+This runs the npm run build command inside the /app/client directory. The --prefix client option specifies the directory where npm should run the command. This is likely the step where your application is built and bundled for production.
+
+This copies the entire contents of the server directory from the host machine to the /app/server directory in the container.
+
+This sets the user to run the subsequent CMD command. In this case, it switches to the node user, which is often used for security reasons to run applications with lower privileges.
+
+This specifies the default command to run when the container starts. It uses the npm start command inside the /app/server directory.
+
+This informs Docker that the container will listen on port 8000 at runtime. However, it doesn't actually publish the port; it's more of a documentation feature. If you want to access this port from outside the container, you need to use the -p option when running the container.
